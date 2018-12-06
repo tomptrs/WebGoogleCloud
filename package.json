@@ -14,7 +14,7 @@
     },
     "scripts": {
       "deploy": "gcloud app deploy",
-      "start": "node app.js",
+      "start": "node start.js",
       "system-test": "repo-tools test app",
       "test": "npm run system-test",
       "e2e-test": "repo-tools test deploy"
