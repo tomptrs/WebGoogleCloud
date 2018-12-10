@@ -1,0 +1,10 @@
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+serviceAccount.json
+keyfile.jsonapp.yaml
+keyfile.json
+.env
+*.env

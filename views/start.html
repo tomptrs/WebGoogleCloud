@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+</style>
+    <script>
+    
+   $(function(){
+
+
+    Animate();
+
+   });
+
+   function Animate()
+	{
+        $.ajax({
+            url: 'results',            
+            type: 'GET',   
+             
+            dataType : 'json',           
+            contentType: 'application/json',
+            success: (data)=>
+            {
+                $( "div.results" ).empty();
+                $.each( data, function( index, value ){
+                    console.log(value)
+                $("div.results").append( "<span class='" + value.color +"'>"+ value.value.value +" , </span>" )
+               });
+            }
+        });
+		setTimeout(Animate,3000);
+	}
+
+    
+
+    function DoeIets(){
+
+    $.get( "test", function( data ) {
+         console.log(data);
+         $.each( data, function( index, value ){
+            console.log(value.description);
+            $("ul.vision").append( "<li>"+ value.description +"</li>" );
+    });
+ 
+    });
+
+
+    }
+
+   
+
+    </script>
+
+    <style>
+    body{
+        background:yellow;
+    }
+    </style>
+
+</head>
+<body>
+<h1>The next big thing</h1>
+    <img src="images/dvw.jpg" width="400" height="500">
+
+   
+    <form method="post" action="process">
+        <input type="text" name="tag" id="tag">
+      <!--  <input type="button" onclick="SendData()" value="send data"> -->
+        <input type="submit" value="submit">
+    </form>
+        
+
+    <input type="button" onclick="DoeIets()" value="Get Results">
+    <ul class="vision">
+
+    </ul>
+
+    <div class="results"></div>>
+
+    <script>
+     function SendData(){
+        
+        var data2 = document.getElementById("tag");
+        console.log(data2.value);
+
+
+    var obj = {
+        'xname':'Tom'
+    };
+         $.ajax({
+            url: 'process/',            
+            type: 'POST',   
+            data:obj,    
+            dataType : 'json',           
+            contentType: 'application/json',
+            success: (data)=>
+            {
+               console.log(data);
+            }
+        });
+    }
+    </script>
+    
+</body>
+</html>
