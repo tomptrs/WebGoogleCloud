@@ -159,6 +159,14 @@ app.get("/results", function (req, res) {
   res.json(results);
 });
 
+app.get("/start", function (req, res) {
+  //setup current date & time
+currentDate = new Date();
+
+currentDate.setHours(currentDate.getHours() - 1);
+  res.json("");
+});
+
 
 /*
 Process the new data : 

@@ -61,6 +61,11 @@
 
     }
 
+    function StartApp(){
+        $.get( "start", function( data ) {
+        });
+    }
+
    
 
     </script>
@@ -82,6 +87,8 @@
       <!--  <input type="button" onclick="SendData()" value="send data"> -->
         <input type="submit" value="submit">
     </form>
+
+    <input type="button" onclick="StartApp()" value="Start">
         
 
     <input type="button" onclick="DoeIets()" value="Get Results">
