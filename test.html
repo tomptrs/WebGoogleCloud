@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script>
+        console.log("hallo Tom ");
+    </script>
+    <style>
+    span.rood{
+        color:red;
+    }
+    </style>
+</head>
+
+
+
+<body>
+    
+<script>   
+
+/*
+
+*/
+var keuze;
+var wapen = prompt("Kies een wapen: kip, pijl,zwaard");
+if(wapen == "kip")
+    keuze = 80;
+else if(wapen == "pijl")
+    keuze = 40;
+else
+    keuze = 20;
+
+var kans = Math.round(Math.random()*100);
+
+if(kans > keuze){
+    document.write("gewonnen");
+}
+else{
+    document.write("verloren");
+}
+</script>
+
+
+
+
+dit is tekst, bla <span>bla</span> bla
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+
+
+
+
+.NotVisible{
+    display:none;
+}
+
+.Visible{
+    display: block;
+}
+</style>
+    <script>
+
+var teller = 1;
+
+   function f(){
+console.log("load")
+      
+
+      setInterval(function(){ 
+          console.log("test");
+            MakeVisible(teller);
+            teller++;
+            if(teller > 2)
+                teller = 1;
+    
+          
+           }, 1000);
+
+       
+    }
+
+    function MakeVisible(teller){
+        var img =  document.querySelector("img:nth-child("+ teller +")");
+        var teller2;
+        if(teller ==1)
+            teller2 =2;
+        else
+            teller2 = 1; 
+        var removeImg = document.querySelector("img:nth-child("+ teller2 +")");
+        
+        removeImg.classList.remove("NotVisible");
+       img.classList.add("Visible");
+    }
+    
+    </script>
+</head>
+<body onload="f()">
+
+    <div>
+        div
+<img class="NotVisible" src="views/images/dvw.jpg">
+
+<img class="NotVisible" src="views/images/test.jpg">
+
+    </div>
+    
+</body>
+</html>
