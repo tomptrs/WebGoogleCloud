@@ -4,6 +4,10 @@
 //DEPLOY TO APP ENGINE
 //https://cloud.google.com/appengine/docs/standard/nodejs/quickstart
 
+//Deploy to computer engine
+// NOT ** https://medium.com/google-cloud/node-to-google-cloud-compute-engine-in-25-minutes-7188830d884e
+//https://codelabs.developers.google.com/codelabs/cloud-create-a-nodejs-vm/index.html?index=..%2F..index#3
+
 'use strict';
 
 // [START gae_node_request_example]
@@ -207,3 +211,6 @@ app.listen(PORT, () => {
 });
 
 // [END gae_node_request_example]
+
+//PORT FORWARDING
+//https://gist.github.com/kentbrew/776580
